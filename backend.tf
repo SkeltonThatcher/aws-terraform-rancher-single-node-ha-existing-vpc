@@ -1,6 +1,6 @@
 terraform {
   backend "s3" {
-    bucket = "terraform-state-data-connected-tools"
+    bucket = "existing_bucket_name_here"
     key    = "rancher"
     region = "eu-west-1"
   }
