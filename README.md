@@ -20,8 +20,6 @@ The Terraform plan is designed to be deployed to existing VPC & subnet infrastru
 * RancherOS EC2 instances with active Docker as Rancher hosts
 * Route 53 DNS alias record for the ELB
 
-The estimated deployment time is 30 minutes.
-
 ### Prerequisites
 
 * AWS account
@@ -31,8 +29,6 @@ The estimated deployment time is 30 minutes.
 * Cygwin (or similar) installed to enable running of .sh scripts if using Windows
 * Git installed and configured
 * Terraform installed and configured
-
-### How to use the Terraform plan to deploy AWS infrastructure supporting Rancher server and Rancher hosts
 
 #### Version advisories
 Tested with the following versions.
