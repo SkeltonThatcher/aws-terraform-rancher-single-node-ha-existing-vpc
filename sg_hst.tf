@@ -9,14 +9,28 @@ resource "aws_security_group" "hst" {
     from_port = 500
     to_port   = 500
     protocol  = "udp"
-    self      = true
+    cidr_blocks = ["${var.pub_sub_a_cidr}"]
   }
 
   ingress {
     from_port = 4500
     to_port   = 4500
     protocol  = "udp"
-    self      = true
+    cidr_blocks = ["${var.pub_sub_a_cidr}"]
+  }
+
+  ingress {
+    from_port = 500
+    to_port   = 500
+    protocol  = "udp"
+    cidr_blocks = ["${var.pub_sub_b_cidr}"]
+  }
+
+  ingress {
+    from_port = 4500
+    to_port   = 4500
+    protocol  = "udp"
+    cidr_blocks = ["${var.pub_sub_b_cidr}"]
   }
 
   ingress {

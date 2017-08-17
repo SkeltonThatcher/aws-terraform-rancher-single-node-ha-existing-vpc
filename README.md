@@ -23,9 +23,9 @@ The Terraform plan is designed to be deployed to existing VPC & subnet infrastru
 ### Prerequisites
 
 * AWS account
-* AWS IAM user account with AWS access/secret keys and permission to create specified resources
 * Existing AWS VPC and subnets (public x2 + private x2)
 * Valid SSL certificate present in the AWS Certificate Manager
+* AWS IAM user account with AWS access/secret keys and permission to create specified resources
 * Cygwin (or similar) installed to enable running of .sh scripts if using Windows
 * Git installed and configured
 * Terraform installed and configured
