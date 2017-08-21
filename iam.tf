@@ -16,6 +16,7 @@ resource "aws_iam_role_policy" "rancher" {
           "autoscaling:*",
           "route53:*",
           "s3:*",
+          "elasticfilesystem:*",
           "sns:*",
           "cloudwatch:*"
         ],

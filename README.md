@@ -1,4 +1,4 @@
-# Single Node SSL/HA for Rancher Server and GoCD in AWS
+# Single Node SSL/HA for Rancher Server in AWS (existing VPC)
 
 This repo contains Terraform code with supporting scripts and advisories to deploy single node HA Rancher server and Rancher hosts in AWS, with supporting EC2 security groups in place for the following custom catalog items:
 
@@ -15,7 +15,7 @@ The Terraform plan is designed to be deployed to existing VPC & subnet infrastru
 * SSL enabled elastic load balancer + listeners
 * Launch configuration + fixed Multi-AZ auto-scaling group of x1 instance for the Rancher server
 * Launch configuration + fixed Multi-AZ auto-scaling group of a specified EC2 instance amount for the Rancher hosts
-* EC2 IAM policy role for the Rancher server & hosts, granting full access to EC2, S3, Route 53, SNS & Cloudwatch
+* EC2 IAM policy role for the Rancher server & hosts, granting full access to EC2, S3, EFS, Route 53, SNS & Cloudwatch
 * RancherOS EC2 instance with active Docker running a password protected deployment of Rancher server
 * RancherOS EC2 instances with active Docker as Rancher hosts
 * Route 53 DNS alias record for the ELB
