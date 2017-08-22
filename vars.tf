@@ -1,5 +1,6 @@
 variable "aws_region" {}
 variable "vpc_id" {}
+variable "vpc_cidr" {}
 variable "key_name" {}
 variable "my_ip" {}
 variable "dns_zone" {}

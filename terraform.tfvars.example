@@ -1,5 +1,6 @@
 aws_region = "the_aws_region"
 vpc_id = "the_existing_vpc_id_to_use"
+vpc_cidr = "the_cidr_range_of_the_vpc"
 my_ip = "your_external_ip_to_enable_srv_ssh_access"
 dns_zone = "existing_route_53_hosted_zone_such_as_mydomain.com"
 key_name = "an_existing_aws_ec2_keypair"

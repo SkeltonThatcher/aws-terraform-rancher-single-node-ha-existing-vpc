@@ -12,6 +12,13 @@ resource "aws_security_group" "sonarqube" {
     cidr_blocks = ["${var.my_ip}/32"]
   }
 
+  ingress {
+    from_port   = 0
+    to_port     = 65535
+    protocol    = "tcp"
+    cidr_blocks = ["${var.vpc_cidr}"]
+  }
+
   egress {
     from_port   = 0
     to_port     = 0
