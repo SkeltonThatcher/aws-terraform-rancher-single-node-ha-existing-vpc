@@ -1,14 +1,14 @@
 # Single Node SSL/HA for Rancher Server in AWS (existing VPC)
 
-This repo contains Terraform code with supporting scripts and advisories to deploy single node HA Rancher server and Rancher hosts in AWS, with supporting EC2 security groups in place for the following custom catalog items:
+This repo contains Terraform code with supporting scripts and advisories to deploy single node HA Rancher server and Rancher hosts in AWS, with supporting EC2 security groups in place for the following STCL-Tech created custom catalog items:
 
 * GoCD server and GoCD auto-registered agents
 * Splunk Enterprise Monitor
 * SonarQube.
 
-The deployment is designed for use with STCL-TECH services from the [SkeltonThatcher Rancher Build Engineering custom catalog ](https://github.com/SkeltonThatcher/rancher-buildeng-catalog)
+The deployment is designed for use with STCL-Tech configured services from the [SkeltonThatcher Rancher Build Engineering custom catalog ](https://github.com/SkeltonThatcher/rancher-buildeng-catalog)
 
-The Terraform plan is designed to be deployed to existing VPC & subnet infrastructure and will build out and deploy the following resources.
+The Terraform plan is designed for use with an existing VPC & subnet infrastructure and is a two stage deployment. It will build out and deploy the following resources.
 
 * RDS DB subnet group
 * Single-AZ or Multi-AZ RDS MySQL DB instance
@@ -29,6 +29,17 @@ The Terraform plan is designed to be deployed to existing VPC & subnet infrastru
 * Cygwin (or similar) installed to enable running of .sh scripts if using Windows
 * Git installed and configured
 * Terraform installed and configured
+
+### Usage
+
+* Create and populate `terraform.tfvars`
+* Ensure hst min, max & des vars are set to 0
+* Initialise remote state to s3
+* Deploy the terraform plan
+* Once Rancher is up and running, obtain the host reg token (Example -  594CC4842D642112345:1483142412345:jFxX3PZgat2D5HIipLT12345)
+* Update `reg_token` in `terraform.tfvars` and set hst min, max and des amounts.
+* Run `terraform plan` and if there are no errors deploy with `terraform apply`.
+* Rancher hosts will launch and register in around 5 minutes.
 
 #### Version advisories
 Tested with the following versions.
